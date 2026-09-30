@@ -11,10 +11,10 @@ from telegram.ext import (
                 ContextTypes,
                     filters,
                     )
-                    from google import genai
-                    from google.genai import types
+from google import genai
+from google.genai import types
 
-                    logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
                     logger = logging.getLogger("voxly")
 
                     BOT_TOKEN = os.environ["BOT_TOKEN"]
@@ -22,7 +22,7 @@ from telegram.ext import (
                     WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET", "voxly-secret")
                     RENDER_EXTERNAL_URL = os.environ.get("RENDER_EXTERNAL_URL")
 
-                    app = FastAPI()
+app = FastAPI()
 
                     telegram_app = Application.builder().token(BOT_TOKEN).build()
                     gemini = genai.Client(api_key=GEMINI_API_KEY)
