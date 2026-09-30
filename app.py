@@ -41,9 +41,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
 
     await update.message.reply_text(
-        "🎙️ Voxly AI hazırdır!
-
-"
+        "🎙️ Voxly AI hazırdır!\n\n"
         "Mənə səsli mesaj göndər. Mən onu yazıya çevirəcəyəm.",
         reply_markup=InlineKeyboardMarkup(keyboard),
     )
