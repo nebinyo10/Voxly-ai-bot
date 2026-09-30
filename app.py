@@ -65,7 +65,7 @@ async def voice_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         response = await asyncio.to_thread(
             gemini.models.generate_content,
-            model="gemini-2.5-flash",
+            model="gemini-3.8-flash",
             contents=[
                 prompt,
                 types.Part.from_bytes(
