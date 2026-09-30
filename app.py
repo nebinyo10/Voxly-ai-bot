@@ -6,21 +6,21 @@ from fastapi import FastAPI, Request, HTTPException
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     Application,
-        CommandHandler,
-            MessageHandler,
-                ContextTypes,
-                    filters,
+    CommandHandler,
+    MessageHandler,
+    ContextTypes,
+    filters,
                     )
 from google import genai
 from google.genai import types
 
 logging.basicConfig(level=logging.INFO)
-                    logger = logging.getLogger("voxly")
+logger = logging.getLogger("voxly")
 
-                    BOT_TOKEN = os.environ["BOT_TOKEN"]
-                    GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
-                    WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET", "voxly-secret")
-                    RENDER_EXTERNAL_URL = os.environ.get("RENDER_EXTERNAL_URL")
+BOT_TOKEN = os.environ["BOT_TOKEN"]
+GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
+WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET", "voxly-secret")
+RENDER_EXTERNAL_URL = os.environ.get("RENDER_EXTERNAL_URL")
 
 app = FastAPI()
 
